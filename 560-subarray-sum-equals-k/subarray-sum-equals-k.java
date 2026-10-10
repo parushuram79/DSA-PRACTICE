@@ -47,8 +47,8 @@ class Solution {
         for (int x : nums) {
             sum += x;
 
-            int val = sum - k;
-            count += hm.getOrDefault(val, 0);
+            //int val = sum - k;
+            count += hm.getOrDefault(sum - k, 0);
 
             hm.put(sum, hm.getOrDefault(sum, 0) + 1);
         }
