@@ -44,8 +44,8 @@ class Solution {
         int sum = 0;
         int count = 0;
 
-        for (int x : nums) {
-            sum += x;
+        for (int i=0;i<nums.length;i++) {
+            sum += nums[i];
 
             //int val = sum - k;
             count += hm.getOrDefault(sum - k, 0);
