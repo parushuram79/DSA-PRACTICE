@@ -25,6 +25,7 @@ class Solution {
         if(prefixs[i]==k){
             count++;
         }
+   
         int val=prefixs[i]-k;
         if(hm.containsKey(val)){
             count+=hm.get(val);
