@@ -9,11 +9,12 @@ class Solution {
         for(int i=0;i<nums.length;i++){
            
             int right=0;
-        left+=nums[i];
-        right=pre-left+nums[i];
+       
+        right=pre-left-nums[i];
         if(left==right){
             return i;
         }
+         left+=nums[i];
         }
     return -1;
     }
