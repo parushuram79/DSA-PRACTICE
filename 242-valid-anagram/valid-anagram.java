@@ -9,20 +9,33 @@ class Solution {
     //   Arrays.sort(T);
     //   return Arrays.equals(S,T);
 
-    HashMap<Character,Integer> map=new HashMap<>();
-    for(char i:s.toCharArray()){
-        map.put(i,map.getOrDefault(i,0)+1);
-    }
+    //HashMap<Character,Integer> map=new HashMap<>();
+    // for(char i:s.toCharArray()){
+    //     map.put(i,map.getOrDefault(i,0)+1);
+    // }
 
-    for(char i:t.toCharArray()){
-        if(!map.containsKey(i)){
+    // for(char i:t.toCharArray()){
+    //     if(!map.containsKey(i)){
+    //         return false;
+    //     }
+    //     map.put(i,map.get(i)-1);
+    //     if(map.get(i)==0){
+    //         map.remove(i);
+    //     }
+    // }
+    //     return map.isEmpty();
+    int freq[]=new int[26];
+    for(char ch:s.toCharArray()){
+        freq[ch-'a']++;
+    }
+    for(char ch:t.toCharArray()){
+        freq[ch-'a']--;
+    }
+    for(int x:freq){
+        if(x!=0){
             return false;
         }
-        map.put(i,map.get(i)-1);
-        if(map.get(i)==0){
-            map.remove(i);
-        }
     }
-        return map.isEmpty();
+    return true;
     }
 }
