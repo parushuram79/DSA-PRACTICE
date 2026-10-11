@@ -13,7 +13,14 @@ class Solution {
 
         // return end - start;        
 
-         String[] arr = s.trim().split("\\s+");
-        return arr[arr.length - 1].length();
+        //  String[] arr = s.trim().split("\\s+");
+        // return arr[arr.length - 1].length();
+
+        s=s.trim();
+        int i=s.length()-1;
+        while(i>=0&&s.charAt(i)!=' '){
+            i--;
+        }
+        return s.length()-i-1;
     }
 }
