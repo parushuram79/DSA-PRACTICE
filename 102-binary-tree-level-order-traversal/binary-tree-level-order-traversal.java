@@ -17,21 +17,21 @@ class Solution {
     List<List<Integer>> ans;   //Global Variable
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        ans = new ArrayList<>();
-
-        DFS(root, 0);
+        ans=new ArrayList<>();
+        dfs(root,0);
         return ans;
     }
 
-    public void DFS(TreeNode root, int a){
-        if(root == null) return;    //root is null return the root value
+    public void dfs(TreeNode root, int len){
+        if(root==null) return;
 
-        if(ans.size() == a){
-            ans.add(new ArrayList<>()); //adding new root element
+        if(ans.size()==len){
+            ans.add(new ArrayList<>());
         }
-        ans.get(a).add(root.val);   //adding list in the list
-        DFS(root.left, a+1);    //recursive calling
-        DFS(root.right, a+1);
+        ans.get(len).add(root.val);
+
+        dfs(root.left,len+1);
+        dfs(root.right,len+1);
         
     }
 }
